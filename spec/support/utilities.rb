@@ -5,9 +5,11 @@ def full_title(page_title)
   else
     "#{base_title} | #{page_title}"
   end
+end
 
-  # test helper to sign in users
-  def sign_in(user, options={})
+
+# test helper to sign in users
+def sign_in(user, options={})
   if options[:no_capybara]
     # Sign in when not using Capybara.
     remember_token = User.new_remember_token
@@ -19,5 +21,4 @@ def full_title(page_title)
     fill_in "Password", with: user.password
     click_button "Sign in"
   end
-end
 end

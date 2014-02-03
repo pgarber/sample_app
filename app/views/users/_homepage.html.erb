@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+        <div class="well well-sm"
+          <!-- this is the sidebar -->
+          <div class="well well-sm">
+            <%= render 'shared/user_info' %>
+          </div>
+          <div class="well well-sm">
+            <p>Search Projects or Coworkers</p>
+            <input type="text" class="form-control">
+            <p></p>
+            <a class="btn btn-primary btn-sm">Search</a>
+          </div>
+          <div class="well well-sm">Company Leaderboard
+          </div>
+          <div class="well well-sm">
+            <p>Company Lookup</p>
+            <input type="text" class="form-control">
+            <p>Trending:</p>
+            <ul>
+              <li>Facebook</li>
+              <li>Exxon Mobil</li>
+              <li>Qualcomm</li>
+            </ul>
+          </div>
+          </div>
+          <div class="well well-sm">
+            <h4>Factory cost reduction</h4>
+            <div class="row">
+              <div class="col-md-6" align="right">
+                <p>Strategy</p>
+                <p>Execution</p>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="well well-sm">
+            <h4>Competitor acquisition</h4>
+            <div class="row">
+              <div class="col-md-6" align="right">
+                <p>Strategy</p>
+                <p>Execution</p>
+              </div>
+              <div class="col-md-6">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+        <div class="col-md-7">
+          <!-- this is the main section -->
+          <div class="well well-sm">
+         
+          <% user = User.find_by(id: "2") %>
+          <%= user.name + " | " + user.email %>
+
+
+
+            <div class="row">
+              <div class="col-md-5" align="right">
+                <p>Ambitious</p>
+                <p>Lead by example</p>
+                <p>Great with customers</p>
+                <p>Married to the job</p>
+                <p>Big picture thinker</p>
+                <p>Reliable</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 20%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 20%;"></div>
+                </div>
+                <p>Needs to improve hiring</p>
+              </div>
+            </div>
+          </div>
+          <div class="well well-sm">
+            <p>Mark Wellington | <u>mwellington@acme.com</u></p>
+            <div class="row">
+              <div class="col-md-5" align="right">
+                <p>Big picture thinker</p>
+                <p>Reliable</p>
+                <p>In early / stays late</p>
+                <p>Leads by example</p>
+                <p>Leadership</p>
+                <p>Technical skills</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 10%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 10%;"></div>
+                </div>
+                <p>Needs to complete work more quickly</p>
+              </div>
+            </div>
+          </div>
+          <div class="well well-sm">
+            <p>Mary Jenkins | mjenkins@acme.com</p>
+            <div class="row">
+              <div class="col-md-5" align="right">
+                <p>Knows the market</p>
+                <p>Ambitious</p>
+                <p>Rainmaker</p>
+                <p>Team player</p>
+                <p>Dependable</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-danger" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 10%;"></div>
+                </div>
+                <p>Needs to build better rapport</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+    <!-- /container -->
+  </body>
+
+</html>

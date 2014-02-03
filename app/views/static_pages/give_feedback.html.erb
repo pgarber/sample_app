@@ -8,34 +8,52 @@
         <p></p>
         <h4>Give feedback for Amy Townley | <u>atownley@acme.com</u></h4>
         <div class="row">
-          <div class="col-md-5" align="right">
-            <p>Results</p>
+          <div class="col-md-5" align="left">
+            <p>Let your coworker know how he or she is doing in these five key areas. </p>
             <p></p>
-            <p>Job Knowledge</p>
+            <p>10 is Best</p>
             <p></p>
-            <p>Initiative</p>
+            <p>1 is Worst</p>
             <p></p>
-            <p>Communication</p>
-            <p></p>
-            <p>Leadership</p>
+            <p>0 means "no rating given"</p>
+
           </div>
           <div class="col-md-5">
-            <!-- to do: change these 5 progress bars to slider bars -->
-            <div class="progress">
-              <div class="progress-bar" style="width: 60%;"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 50%;"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%;"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 10%;"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 10%;"></div>
-            </div>
+          Results: <span id="resultsRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="resultsValue(this.value)" />
+          Job Knowledge: <span id="jkRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="jkValue(this.value)" />
+          Initiative: <span id="initiativeRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="initiativeValue(this.value)" />          
+          Communication: <span id="commRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="commValue(this.value)" />          
+          Leadership: <span id="leadershipRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="leadershipValue(this.value)" />          
+
+          <script type="text/javascript">
+          function resultsValue(newValue)
+          {
+            document.getElementById("resultsRange").innerHTML=newValue;
+          }
+          function jkValue(newValue)
+          {
+            document.getElementById("jkRange").innerHTML=newValue;
+          }
+          function initiativeValue(newValue)
+          {
+            document.getElementById("initiativeRange").innerHTML=newValue;
+          }
+          function commValue(newValue)
+          {
+            document.getElementById("commRange").innerHTML=newValue;
+          }
+          function leadershipValue(newValue)
+          {
+            document.getElementById("leadershipRange").innerHTML=newValue;
+          }
+          </script>
+
+            
           </div>
         </div>
       </div>

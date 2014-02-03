@@ -80,9 +80,10 @@
           <div class="well well-sm">
          
           <% user = User.find_by(id: "2") %>
-          <%= user.name + " | " + user.email %>
+          <%#= user.name + " | " + user.email %>
 
-
+          <%#= link_to user.name,  + " | " + user.email %>
+          <%= link_to current_user.name, "give_feedback"  %> <%# goes to users/show.html.erb %>
 
             <div class="row">
               <div class="col-md-5" align="right">

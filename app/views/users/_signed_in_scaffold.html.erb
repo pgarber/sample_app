@@ -1,0 +1,30 @@
+
+    <div class="col-md-5">
+      <div class="well well-sm" <!-- this is the sidebar -->
+        <div class="well well-sm">
+          <%# was @user.name, @user.email but that was nil %>
+          <%= current_user.name %>, <%= current_user.email %>
+          <p>Feedback for me</p>
+          <p>+1 Above and beyond</p>
+        </div>
+        <div class="well well-sm">
+          <p>Search Projects or Coworkers</p>
+          <input type="text" class="form-control">
+          <p></p>
+          <a class="btn btn-primary btn-sm">Search</a>
+        </div>
+        <div class="well well-sm">Company Leaderboard
+        </div>
+        <div class="well well-sm">
+          <p>Company Lookup</p>
+          <input type="text" class="form-control">
+          <p>Trending:</p>
+          <ul>
+            <li>Facebook</li>
+            <li>Exxon Mobil</li>
+            <li>Qualcomm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+

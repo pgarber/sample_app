@@ -1,6 +1,7 @@
 <h4>
   <%= link_to current_user.name, current_user %> <%# goes to users/show.html.erb %>
+  <%#= link_to current_user.name, "/users/show" %> <%# goes to users/show.html.erb %>
 </h4>
 <span>
-  <%= pluralize(current_user.microposts.count, "micropost") %>
+  <%= pluralize(current_user.microposts.count, "piece")%> of feedback received
 </span>

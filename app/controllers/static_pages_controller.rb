@@ -15,4 +15,8 @@ class StaticPagesController < ApplicationController
   def contact
   end	
 
+  def give_feedback
+    # put stuff here like which user we're giving feedback for
+  end
+
 end

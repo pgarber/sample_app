@@ -12,37 +12,14 @@
     <br>
     <div class="container">
       <div class="row">
-        <div class="col-md-5">
-        <div class="well well-sm"
-          <!-- this is the sidebar -->
-          <div class="well well-sm">
-            <%= render 'shared/user_info' %>
-          </div>
-          <div class="well well-sm">
-            <p>Search Projects or Coworkers</p>
-            <input type="text" class="form-control">
-            <p></p>
-            <a class="btn btn-primary btn-sm">Search</a>
-          </div>
-          <div class="well well-sm">
-          <% # link_to "Company Leaderboard", "users/102"  # eventually it will be company/leaderboard%> 
-          <%= link_to "Company Leaderboard", "/leaderboard" %> 
-          </div>
-          <div class="well well-sm">
-            <p>Company Lookup</p>
-            <input type="text" class="form-control">
-            <p>Trending:</p>
-            <ul>
-              <li>Facebook</li>
-              <li>Exxon Mobil</li>
-              <li>Qualcomm</li>
-            </ul>
-          </div>
-          </div>
+        <%= render "users/signed_in_sidebar" %>
+        
+        <div class="col-md-7">
+
           <div class="well well-sm">
             <h4>Factory cost reduction</h4>
             <div class="row">
-              <div class="col-md-6" align="right">
+              <div class="col-md-5" align="right">
                 <p>Strategy</p>
                 <p>Execution</p>
               </div>
@@ -59,7 +36,7 @@
           <div class="well well-sm">
             <h4>Competitor acquisition</h4>
             <div class="row">
-              <div class="col-md-6" align="right">
+              <div class="col-md-5" align="right">
                 <p>Strategy</p>
                 <p>Execution</p>
               </div>
@@ -72,18 +49,14 @@
                 </div>
               </div>
             </div>
-          
           </div>
-        </div>
-        <div class="col-md-7">
+
           <!-- this is the main section -->
           <div class="well well-sm">
-         
-          <% user = User.find_by(id: "2") %>
-          <%#= user.name + " | " + user.email %>
-
+          <% user = User.find_by(id: "17") %>  <!-- random for now, select by recent or other later -->
+          <p><%= user.name + " | " + user.email %> </p>
           <%#= link_to user.name,  + " | " + user.email %>
-          <%= link_to current_user.name, "give_feedback"  %> <%# goes to users/show.html.erb %>
+          <%#= link_to current_user.name, "give_feedback"  %> <%# goes to users/show.html.erb %>
 
             <div class="row">
               <div class="col-md-5" align="right">
@@ -118,7 +91,8 @@
             </div>
           </div>
           <div class="well well-sm">
-            <p>Mark Wellington | <u>mwellington@acme.com</u></p>
+            <% user = User.find_by(id: "25") %>  
+            <p><%= user.name + " | " + user.email %> </p>
             <div class="row">
               <div class="col-md-5" align="right">
                 <p>Big picture thinker</p>
@@ -152,7 +126,8 @@
             </div>
           </div>
           <div class="well well-sm">
-            <p>Mary Jenkins | mjenkins@acme.com</p>
+            <% user = User.find_by(id: "20") %>  
+            <p><%= user.name + " | " + user.email %> </p>
             <div class="row">
               <div class="col-md-5" align="right">
                 <p>Knows the market</p>

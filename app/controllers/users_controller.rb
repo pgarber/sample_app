@@ -62,6 +62,10 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  #def give_feedback
+  #end
+
+
 
 private
 

@@ -1,4 +1,4 @@
-
+##### feedbacks/give_feedback.html.erb  - right one to use #############
 
 <br>
 <div class="container">
@@ -8,8 +8,10 @@
       <!-- this is the main section -->
       <div class="well well-sm">
         <p></p>
-         
-        <h4>Give feedback for <%= User.name %>, <%= User.email %></h4>
+
+
+        <h4>Give feedback for <%= User.name %></h4>
+
         <div class="row">
           <div class="col-md-5" align="left">
             <p>Let your coworker know how he or she is doing in these five key areas. </p>
@@ -62,7 +64,9 @@
       </div>
       <div class="well well-sm">
         <p></p>
-        <h4>Give attributes for Amy Townley | select as many as apply</h4>
+
+        <h4>Give attributes for <%= User.name %> | select as many as apply</h4>
+
         <div align="center">
           <b>Ability</b>
         </div>

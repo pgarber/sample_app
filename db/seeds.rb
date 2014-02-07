@@ -10,7 +10,9 @@
 # then run $ rake db:setup
 # $ rake db:reset
 # $ rake db:populate
-# $ rake test:prepare
+# don't need: $ rake test:prepare
+# restart rails server
+
 
 attribute_list = [
   [ "Technical guru", 'true', 2 ],
@@ -32,7 +34,53 @@ attribute_list = [
   [ "Team player", 'true', 18 ],
   [ "Needs to work more effectively with team", 'false', 17 ],
   [ "Honest", 'true', 20 ],
-  [ "Needs to be more forethright in dealings", 'false', 19 ]
+  [ "Needs to be more forethright in dealings", 'false', 19 ],
+  [ "Inspires people", 'true', 22 ],
+  [ "Needs to inspire with credible vision", 'false', 21 ],
+  [ "Inspires people", 'true', 24 ],
+  [ "Needs to give credit where due", 'false', 23 ],
+  [ "Life of the party / meeting", 'true', 26 ],
+  [ "Needs to build better rapport", 'false', 25 ],
+  [ "Employees love him/her", 'true', 28 ],
+  [ "Needs more reasonable expectations", 'false', 27 ],
+  [ "Leads by example", 'true', 30 ],
+  [ "Needs to practice what he/she preaches", 'false', 29 ],
+  [ "Walks the walk", 'true', 32 ],
+  [ "Needs to put in put in more effort", 'false', 31 ],
+  [ "Hires well", 'true', 34 ],
+  [ "Needs to improve hiring", 'false', 33 ],
+  [ "Communicates clearly", 'true', 36 ],
+  [ "Needs to communicate more clearly", 'false', 35 ],
+  [ "Personable and well liked", 'true', 38 ],
+  [ "Needs better relationship with coworkers", 'false', 37 ],
+  [ "Markets self well", 'true', 40 ],
+  [ "Needs to communicate contributions", 'false', 39 ],
+  [ "Good customer rapport", 'true', 42 ],
+  [ "Needs to build credibility with clients", 'false', 41 ],
+  [ "Voice for the customer", 'true', 44 ],
+  [ "Needs to advocate for customer", 'false', 43 ],
+  [ "Knows the market", 'true', 46 ],
+  [ "Needs better market understanding", 'false', 45 ],
+  [ "Rainmaker", 'true', 48 ],
+  [ "Needs to win more business", 'false', 47 ],
+  [ "Dependable", 'true', 50 ],
+  [ "Needs to deliver on commitments", 'false', 49 ],
+  [ "Tireless worker", 'true', 52 ],
+  [ "Needs to apply self more", 'false', 51 ],
+  [ "Meets and beats deadlines", 'true', 54 ],
+  [ "Needs to complete work more quickly", 'false', 53 ],
+  [ "In early / stays late", 'true', 56 ],
+  [ "Needs to avoid kissing up", 'false', 55 ],
+  [ "Laser focus on task at hand", 'true', 58 ],
+  [ "Needs to avoid distractions", 'false', 57 ],
+  [ "Finds a way to win", 'true', 60 ],
+  [ "Needs to not rest aon laurels", 'false', 59 ],
+  [ "Ambitious", 'true', 62 ],
+  [ "Needs to show more ambition", 'false', 61 ],
+  [ "Goes above and beyond", 'true', 64 ],
+  [ "Needs to do more than is asked", 'false', 63 ]
+
+
 
 ]
 

@@ -7,6 +7,10 @@
       <!-- this is the main section -->
       <div class="well well-sm">
         <p></p>
+        Temp: logged in as current_user.name: <%= current_user.name %> <br>
+        Temp: rated_user = 24 <% rated_user = 24 %> <br>
+        Temp: which is <%= User.find(24).name %> <br>
+        
 
 
         <h4>Give feedback for <%= User.find(24).name %></h4>
@@ -72,87 +76,61 @@
           <b>Ability</b>
         </div> -->
 
+        <%# if formatting is messed up, it can just be the left column word wrapping! %>  
         <div class="row">
           <% all_attributes = Attribute.all %>
           <% all_attributes.each do |attribute| %>
             <% if attribute.good == 'true' %>
-              <div class="col-md-5" align="left">
+              <div class="col-md-6" align="left">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="false"><%= attribute.attribute_name %>
+                    <input type="checkbox" name= <%= attribute.id %> value="false"><%= attribute.attribute_name %>
                   </label>
                 </div>
               </div>  
-              <div class="col-md-7">
+              <div class="col-md-6">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="false"><%= all_attributes.find(attribute.opposite_id).attribute_name %>
+                    <input type="checkbox" name= <%= attribute.opposite_id %>  value="false"><%= all_attributes.find(attribute.opposite_id).attribute_name %>
                   </label>
                 </div>
               </div>  
             <% end %>  
           <% end %>
 
+          <%= check_box_tag(:anonymous) %> Anonymous <br> <%# check_box_tag works better with Rails but you have to hit the box - clicking the lable doesn't do anything %>
+          <%= check_box_tag(:anonymous2) %> Anonymous2 <br>
+          <%= check_box_tag 'accept' %> <br>
+          <br>
+          <strong> attributes using check_box_tag </strong>
+          <br>
+          <ul>
+            <% all_attributes.each do |attribute| %>
+                <li>
+                  <%= check_box_tag 'attribute_ids[]', attribute.id -%>
+                  <%= h attribute.attribute_name -%>
+                </li>
+            <% end %>
+          </ul>
+          
+          <form>
+            Checkbox:<input type="checkbox" id="techGuru">
+          </form>
 
+          <button onclick="saveFeedback()">Submit feedback</button>
 
-
-
-
-
-<!--         <div class="row">
-          <% all_attributes = Attribute.all %>
-          <% all_attributes.each do |attribute| %>
-            <% if attribute.good == 'true' %>
-              <div class="col-md-5" align="left">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="false"><%= attribute.attribute_name %>
-                  </label>
-                </div>
-              </div>  
-            <% elsif attribute.good == 'false' %> 
-              <div class="col-md-7">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="false"><%= attribute.attribute_name %>
-                  </label>
-                </div>
-              </div>  
-            <% end %>  
-          <% end %> -->
-
-
-
-
-
-<!--           <div class="col-md-5" align="left">
-          <% all_attributes = Attribute.all %>
-          <% all_attributes.each do |attribute| %>
-          <%# all_attributes.where(good: 'true') do |attribute| %>
-            <% if attribute.good == 'true' %>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="false"><%= attribute.attribute_name %>
-                </label>
-              </div>
-            <% end %>  
-          <% end %> -->
-
-
-<!--           </div> 
-
-          <div class="col-md-7">
-          <% all_attributes.each do |attribute| %>
-          <%# all_attributes.where(good: 'true') do |attribute| %>
-            <% if attribute.good == 'false' %>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="false"><%= attribute.attribute_name %>
-                </label>
-              </div>
-            <% end %>  
-          <% end %> -->
-
+          <script>
+            function saveFeedback()
+            {
+              puts "in saveFeedback";
+              if (document.getElementById("techGuru").checked)
+              {
+                puts "in if statement";
+                Feedback.create(from_id: current_user.id, to_id: 24, attribute_id: 1);  
+              }
+              
+            }
+          </script>
 
         
       </div> 

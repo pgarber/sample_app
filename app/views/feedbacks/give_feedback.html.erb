@@ -106,10 +106,10 @@
 
 
           Start codelearn code
-          <%= form_tag("/todos/complete/", :method => "post") do %>
+          <%= form_tag("/feedbacks/complete/", :method => "post") do %> 
           <ul style="list-style-type:none;">
           <% all_attributes.each do |t| %> 
-              <li> <%= check_box_tag  "todos_checkbox[]",t.id %> <%= t.attribute_name %>  </li>
+              <li> <%= check_box_tag  "attribute_checkbox[]",t.id %> <%= t.attribute_name %>  </li>
           <%end%>
           </ul>
           <%= submit_tag("Complete Todos", :class=>"btn btn-success") %>

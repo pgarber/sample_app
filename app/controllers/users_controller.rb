@@ -65,6 +65,9 @@ class UsersController < ApplicationController
   #def give_feedback
   #end
 
+  def feedback
+  end
+
 
 
 private

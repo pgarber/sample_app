@@ -98,6 +98,26 @@
             <% end %>  
           <% end %>
 
+          <%= form_for(current_user.relationships.build(followed_id: 25), remote: true) do |f| %>
+          <%#= form_for(current_user.feedbacks.build(followed_id: 24), remote: true) do |f| %>
+            <div><%= f.hidden_field :followed_id %></div>
+            <%= f.submit "follow", class: "btn btn-primary" %>
+          <% end %>
+
+
+          Start codelearn code
+          <%= form_tag("/todos/complete/", :method => "post") do %>
+          <ul style="list-style-type:none;">
+          <% all_attributes.each do |t| %> 
+              <li> <%= check_box_tag  "todos_checkbox[]",t.id %> <%= t.attribute_name %>  </li>
+          <%end%>
+          </ul>
+          <%= submit_tag("Complete Todos", :class=>"btn btn-success") %>
+          <%end %>
+          end codelearn code
+
+
+          <!--
           <%= check_box_tag(:anonymous) %> Anonymous <br> <%# check_box_tag works better with Rails but you have to hit the box - clicking the lable doesn't do anything %>
           <%= check_box_tag(:anonymous2) %> Anonymous2 <br>
           <%= check_box_tag 'accept' %> <br>
@@ -131,6 +151,7 @@
               
             }
           </script>
+          -->
 
         
       </div> 

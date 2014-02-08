@@ -1,4 +1,5 @@
 <%= form_for(current_user.relationships.build(followed_id: @user.id), remote: true) do |f| %>
+<%# the remote: true means it does it with Ajax so that a request can be sent to the server without leaving the page %>
   <div><%= f.hidden_field :followed_id %></div>
   <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -19,3 +19,5 @@ anyone signed in user can see other users' full feedback
 
 2/5/14: created Attributes controller and Attribute model
 		created Feedbacks controller and Feedback model
+
+NOW WORKING in code/BUv2 - still called branch BU_hartl (and sample app still has a BU_hartl but I checked out)		

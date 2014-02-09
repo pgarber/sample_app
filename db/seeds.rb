@@ -74,7 +74,7 @@ attribute_list = [
   [ "Laser focus on task at hand", 'true', 58 ],
   [ "Needs to avoid distractions", 'false', 57 ],
   [ "Finds a way to win", 'true', 60 ],
-  [ "Needs to not rest aon laurels", 'false', 59 ],
+  [ "Needs to not rest on laurels", 'false', 59 ],
   [ "Ambitious", 'true', 62 ],
   [ "Needs to show more ambition", 'false', 61 ],
   [ "Goes above and beyond", 'true', 64 ],

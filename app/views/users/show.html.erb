@@ -1,116 +1,156 @@
 
+<br>
+<div class="container">
+  <div class="row">
+    <%= render "users/signed_in_sidebar" %>
+    <div class="col-md-7">
+      <!-- this is the main section -->
+      <div class="well well-sm">
+        <p></p>
+    
+        <h4>Give feedback for <%= @user.name %></h4>
 
-<% provide(:title, @user.name) %>
-
-      <br>
-    <div class="container">
-      <div class="row">
-      <!-- this is the sidebar.  Remember to put the co. strategy ratings back in.  -->
-        <%= render "users/signed_in_sidebar" %>        
-        <div class="col-md-7">
-          <!-- this is the main section -->
-          <div class="well well-sm">
+        <div class="row">
+          <div class="col-md-5" align="left">
+            <p>Let your coworker know how he or she is doing in these five key areas. </p>
             <p></p>
-            <h4><%= @user.name %>, <%= @user.email %></h4>
-
-
+            <p>10 is Best</p>
             <p></p>
-            <div class="row">
-              <div class="col-md-5" align="right">
-                <p>Ambitious</p>
-                <p>Lead by example</p>
-                <p>Great with customers</p>
-                <p>Married to the job</p>
-                <p>Big picture thinker</p>
-                <p>Reliable</p><br>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-danger" style="width: 50%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-danger" style="width: 40%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-danger" style="width: 30%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-danger" style="width: 10%;"></div>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="progress">
-                  <div class="progress-bar" style="width: 80%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 60%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 30%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 20%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 20%;"></div>
-                </div>
-                <p>Needs to better market understanding</p>
-                <p>Needs a role with better fit</p>
-                <p>Needs to give credit where due</p>
-                <p>Needs to not rest on laurels</p>
-                <p>Needs better follow up on actions</p>
-              </div>
-            </div>
+            <p>1 is Worst</p>
+            <p></p>
+            <p>0 means "no rating given"</p>
+
           </div>
-          <div class="well well-sm">
-          <h4>Job performance based on 7 reviewers</h4>
-            <div class="row">
-              <div class="col-md-5" align="right">
-              <font size="4">
-                <p>Results</p>
-                <p></p>
-                <p>Job Knowledge</p>
-                <p></p>
-                <p>Initiative</p>
-                <p></p>
-                <p>Communication</p>
-                <p></p>
-                <p>Leadership</p>
-              </font>
-              </div>
-              <div class="col-md-5">
-                <div class="progress">
-                  <div class="progress-bar" style="width: 60%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 40%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 10%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 10%;"></div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-5">
+          Results: <span id="resultsRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="resultsValue(this.value)" />
+          Job Knowledge: <span id="jkRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="jkValue(this.value)" />
+          Initiative: <span id="initiativeRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="initiativeValue(this.value)" />          
+          Communication: <span id="commRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="commValue(this.value)" />          
+          Leadership: <span id="leadershipRange">0</span>
+          <input type="range" min="0" max="10" value="0" step="1" onchange="leadershipValue(this.value)" />          
+
+          <script type="text/javascript">
+          function resultsValue(newValue)
+          {
+            document.getElementById("resultsRange").innerHTML=newValue;
+          }
+          function jkValue(newValue)
+          {
+            document.getElementById("jkRange").innerHTML=newValue;
+          }
+          function initiativeValue(newValue)
+          {
+            document.getElementById("initiativeRange").innerHTML=newValue;
+          }
+          function commValue(newValue)
+          {
+            document.getElementById("commRange").innerHTML=newValue;
+          }
+          function leadershipValue(newValue)
+          {
+            document.getElementById("leadershipRange").innerHTML=newValue;
+          }
+          </script>
+
+            
           </div>
         </div>
-
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
-
       </div>
+      <div class="well well-sm">
+        <p></p>
 
+        <h4>Give attributes for <%= @user.name %> </h4>Select as many as apply
+        :id is <%= :id %> <br>
+        params[:id] is <%= params[:id] %>
+                <%# change this once give_feedback is called for a certain user %>
+
+
+<!--         <div align="center">
+          <b>Ability</b>
+        </div> -->
+
+        <%# if formatting is messed up, it can just be the left column word wrapping! %>  
+<!--         <div class="row">
+          <% all_attributes = Attribute.all %>
+          <% all_attributes.each do |attribute| %>
+            <% if attribute.good == 'true' %>
+              <div class="col-md-6" align="left">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name= <%= attribute.id %> value="false"><%= attribute.attribute_name %>
+                  </label>
+                </div>
+              </div>  
+              <div class="col-md-6">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name= <%= attribute.opposite_id %>  value="false"><%= all_attributes.find(attribute.opposite_id).attribute_name %>
+                  </label>
+                </div>
+              </div>  
+            <% end %>  
+          <% end %> -->
+
+          <%#= form_for(current_user.relationships.build(followed_id: 25), remote: true) do |f| %>
+          <%#= form_for(current_user.feedbacks.build(followed_id: 24), remote: true) do |f| %>
+            <div><%#= f.hidden_field :followed_id %></div>
+            <%#= f.submit "follow", class: "btn btn-primary" %>
+          <%# end %>
+
+
+          <%= form_tag("/feedbacks/complete/"+params[:id],  :method => "post", :remote => true) do %> <%# from codelearn.org %>
+          <ul style="list-style-type:none;">
+          <% all_attributes.each do |t| %> 
+              <li> <%= check_box_tag  ("attribute_checkbox[]"),t.id %> <%= label_tag("attribute_checkbox[]", t.attribute_name) %> <%#= t.attribute_name %>  </li>
+              <%# todo: make the label tag work correctly %>
+          <%end%>
+          </ul>
+          <%= submit_tag("Submit feedback", :class=>"btn btn-success") %>
+          <%end %>
+
+
+          <!--
+          <%= check_box_tag(:anonymous) %> Anonymous <br> <%# check_box_tag works better with Rails but you have to hit the box - clicking the lable doesn't do anything %>
+          <%= check_box_tag(:anonymous2) %> Anonymous2 <br>
+          <%= check_box_tag 'accept' %> <br>
+          <br>
+          <strong> attributes using check_box_tag </strong>
+          <br>
+          <ul>
+            <% all_attributes.each do |attribute| %>
+                <li>
+                  <%= check_box_tag 'attribute_ids[]', attribute.id -%>
+                  <%= h attribute.attribute_name -%>
+                </li>
+            <% end %>
+          </ul>
+          
+          <form>
+            Checkbox:<input type="checkbox" id="techGuru">
+          </form>
+
+          <button onclick="saveFeedback()">Submit feedback</button>
+
+          <script>
+            function saveFeedback()
+            {
+              puts "in saveFeedback";
+              if (document.getElementById("techGuru").checked)
+              {
+                puts "in if statement";
+                Feedback.create(from_id: current_user.id, to_id: 24, attribute_id: 1);  
+              }
+              
+            }
+          </script>
+          -->
+
+        
+      </div> 
+    </div>
+  </div>
 </div>

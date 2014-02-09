@@ -18,13 +18,16 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/leaderboard', to: 'leaderboard#leaderboard', via: 'get'  
   match '/give_feedback', to: 'feedbacks#give_feedback', via: 'get'
-  match 'feedbacks/complete', to: 'feedbacks#complete', via: 'post' 
+  match 'feedbacks/complete/:id', to: 'feedbacks#complete', via: 'post' 
+  match '/myfeedback', to: 'users#myfeedback',  via: 'get'
 
 
   get "static_pages/home"  
   get "static_pages/help"
   get "static_pages/about" 
   get "static_pages/contact" 
+
+
 
 
  

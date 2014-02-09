@@ -16,10 +16,11 @@ class FeedbacksController < ApplicationController
 
   def complete
     params[:attribute_checkbox].each do |check|
+    	#puts check
        attribute_id = check
-       t = Feedback.find_by_id(attribute_id)
+         #t = Feedback.find_by_id(attribute_id) # don't need this since I'm always creating new
        #t.update_attriubte(:completed, true)  # this needs to create an db entry rather than change  a field of an already existing line
- 	   Feedback.create(from_id: current_user.id, to_id: 29, attribute_id: 1);
+ 	   Feedback.create(from_id: current_user.id, to_id: 29, attribute_id: attribute_id);
      end
     redirect_to root_url  # TODO - don't go home.  stay on the page.  use ajax?
   end

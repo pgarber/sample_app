@@ -15,9 +15,15 @@ give_feedback.html went into static_pages/give_feedback.html.erb -> now in show.
 try to do better design with shared/_signed_in_sidebar.html.erb
 
 to do:
-anyone signed in user can see other users' full feedback
+- anyone signed in user can see other users' full feedback 
+  redirect to homepage if they try to do that
+- 
 
 2/5/14: created Attributes controller and Attribute model
 		created Feedbacks controller and Feedback model
 
 NOW WORKING in code/BUv2 - still called branch BU_hartl (and sample app still has a BU_hartl but I checked out)		
+
+- add ember.js and Addepar for graphing.  put Handlebars and ember.js 1.3 into code/BUv2/vendor.  load them in layouts/application.html.erb
+
+

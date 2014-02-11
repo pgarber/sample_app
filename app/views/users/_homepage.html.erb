@@ -5,10 +5,12 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
   </head>
   
   <body>
-    
+
+   
     <br>
     <div class="container">
       <div class="row">
@@ -17,21 +19,7 @@
         <div class="col-md-7">
 
           <div class="well well-sm">
-            <h4>Factory cost reduction</h4>
-            <div class="row">
-              <div class="col-md-5" align="right">
-                <p>Strategy</p>
-                <p>Execution</p>
-              </div>
-              <div class="col-md-6">
-                <div class="progress">
-                  <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%;"></div>
-                </div>
-              </div>
-            </div>
+            <%= render "users/chart1" %>
           </div>
           <div class="well well-sm">
             <h4>Competitor acquisition</h4>
@@ -163,5 +151,8 @@
     </div>
     <!-- /container -->
   </body>
+
+
+
 
 </html>

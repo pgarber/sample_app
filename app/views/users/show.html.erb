@@ -63,91 +63,30 @@
       <div class="well well-sm">
         <p></p>
 
-        <h4>Give attributes for <%= @user.name %> </h4>Select as many as apply
-        :id is <%= :id %> <br>
-        params[:id] is <%= params[:id] %>
-                <%# change this once give_feedback is called for a certain user %>
+        <h4>Select attributes that apply to <%= @user.name %> </h4>Select as many or as few as you wish to describe <%= @user.name%>'s job performance
 
-
-<!--         <div align="center">
-          <b>Ability</b>
-        </div> -->
-
-        <%# if formatting is messed up, it can just be the left column word wrapping! %>  
-<!--         <div class="row">
           <% all_attributes = Attribute.all %>
-          <% all_attributes.each do |attribute| %>
-            <% if attribute.good == 'true' %>
-              <div class="col-md-6" align="left">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name= <%= attribute.id %> value="false"><%= attribute.attribute_name %>
-                  </label>
-                </div>
-              </div>  
-              <div class="col-md-6">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name= <%= attribute.opposite_id %>  value="false"><%= all_attributes.find(attribute.opposite_id).attribute_name %>
-                  </label>
-                </div>
-              </div>  
-            <% end %>  
-          <% end %> -->
-
-          <%#= form_for(current_user.relationships.build(followed_id: 25), remote: true) do |f| %>
-          <%#= form_for(current_user.feedbacks.build(followed_id: 24), remote: true) do |f| %>
-            <div><%#= f.hidden_field :followed_id %></div>
-            <%#= f.submit "follow", class: "btn btn-primary" %>
-          <%# end %>
-
 
           <%= form_tag("/feedbacks/complete/"+params[:id],  :method => "post", :remote => true) do %> <%# from codelearn.org %>
-          <ul style="list-style-type:none;">
-          <% all_attributes.each do |t| %> 
-              <li> <%= check_box_tag  ("attribute_checkbox[]"),t.id %> <%= label_tag("attribute_checkbox[]", t.attribute_name) %> <%#= t.attribute_name %>  </li>
-              <%# todo: make the label tag work correctly %>
+          
+          <% all_attributes.each do |attribute| %> 
+            <% if attribute.good == 'true' %>
+              <div class="col-md-6" >
+                <label>
+                  <%= check_box_tag  ("attribute_checkbox[]"),attribute.id %><%=  attribute.attribute_name %> 
+                </label> 
+              </div>  
+              <div class="col-md-6">
+                <label>
+                  <%= check_box_tag  ("attribute_checkbox[]"),attribute.opposite_id %><%=  all_attributes.find(attribute.opposite_id).attribute_name%>
+                </label>
+              </div>  
+            <% end %>  
+
           <%end%>
-          </ul>
+          
           <%= submit_tag("Submit feedback", :class=>"btn btn-success") %>
           <%end %>
-
-
-          <!--
-          <%= check_box_tag(:anonymous) %> Anonymous <br> <%# check_box_tag works better with Rails but you have to hit the box - clicking the lable doesn't do anything %>
-          <%= check_box_tag(:anonymous2) %> Anonymous2 <br>
-          <%= check_box_tag 'accept' %> <br>
-          <br>
-          <strong> attributes using check_box_tag </strong>
-          <br>
-          <ul>
-            <% all_attributes.each do |attribute| %>
-                <li>
-                  <%= check_box_tag 'attribute_ids[]', attribute.id -%>
-                  <%= h attribute.attribute_name -%>
-                </li>
-            <% end %>
-          </ul>
-          
-          <form>
-            Checkbox:<input type="checkbox" id="techGuru">
-          </form>
-
-          <button onclick="saveFeedback()">Submit feedback</button>
-
-          <script>
-            function saveFeedback()
-            {
-              puts "in saveFeedback";
-              if (document.getElementById("techGuru").checked)
-              {
-                puts "in if statement";
-                Feedback.create(from_id: current_user.id, to_id: 24, attribute_id: 1);  
-              }
-              
-            }
-          </script>
-          -->
 
         
       </div> 

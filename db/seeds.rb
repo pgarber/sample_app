@@ -79,11 +79,9 @@ attribute_list = [
   [ "Needs to show more ambition", 'false', 61 ],
   [ "Goes above and beyond", 'true', 64 ],
   [ "Needs to do more than is asked", 'false', 63 ]
-
-
-
 ]
 
 attribute_list.each do |attribute_name, good, opposite_id|
   Attribute.create( attribute_name: attribute_name, good: good, opposite_id: opposite_id )
 end
+

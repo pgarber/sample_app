@@ -1,4 +1,9 @@
-function plot_strat_chart() {
+function plot_strat_chart(columns, rows) {
+	// columns is an array of arrays for 		  data1.addColumn('string', 'Aspect');
+		  										// data1.addColumn('number', 'Rating');
+	// rows is an array of arrys for 	  			  data1.addRows([
+		  										//  ['Strategy', 7.2],
+		   										// ['Execution', 5.5],									
 	// Load the AJAX API
 	$.getScript("https://www.google.com/jsapi", function(){
 

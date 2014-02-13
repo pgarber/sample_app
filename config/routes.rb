@@ -20,6 +20,7 @@ SampleApp::Application.routes.draw do
   match '/give_feedback', to: 'feedbacks#give_feedback', via: 'get'
   match 'feedbacks/complete/:id', to: 'feedbacks#complete', via: 'post' 
   match '/myfeedback', to: 'users#myfeedback',  via: 'get'
+  match '/crunchdata', to: 'users#crunchdata', via: 'get'
 
 
   get "static_pages/home"  

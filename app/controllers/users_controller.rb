@@ -68,6 +68,30 @@ class UsersController < ApplicationController
   def feedback
   end
 
+  def crunchdata
+    null_array = Array.new(Attribute.count){ 0 } 
+       all_feedback = Feedback.all 
+       all_feedback.find(2).to_id  # just for debug 
+
+      all_feedback.each do |vote| 
+
+         @user = User.find(vote.to_id) 
+         @user.name # remove - for debug 
+
+         @user.ratings ||= null_array 
+        # @user.ratings 
+         @user.ratings[vote.attribute_id] = 17 # maybe I can't do it by modifying user 
+         @user.ratings[3]  
+         if @user.save   # user.save! and look for errors 
+          render 'homepage' #"saved" 
+         else 
+          render 'show_follow' #"didn't save" 
+         end 
+         #{}User.find(vote.to_id).ratings[vote.attribute_id]+=1 
+      end
+  end
+
+
 
 
 private

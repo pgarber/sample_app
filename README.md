@@ -26,4 +26,16 @@ NOW WORKING in code/BUv2 - still called branch BU_hartl (and sample app still ha
 
 - add ember.js and Addepar for graphing.  put Handlebars and ember.js 1.3 into code/BUv2/vendor.  load them in layouts/application.html.erb
 
+Things I did
+$ rails generate controller Attributes --no-test-framework
+$ rails generate model Attribute attribute_name:string good:binary opposite_id:integer
+$ rake db:migrate
 
+$ rails g migration add_ratings_to_users ratings:array
+$ rake db:migrate
+
+$ rails g migration change_ratings_format_in_users_table
+
+
+THINGS I DONT UNDERSTAND
+- edit.html.erb: f.password ... f.submit

@@ -36,6 +36,8 @@ $ rake db:migrate
 
 $ rails g migration change_ratings_format_in_users_table
 
+create branch screwed_up_db - just in case I make things even worse than they are now.
+
 
 THINGS I DONT UNDERSTAND
 - edit.html.erb: f.password ... f.submit
